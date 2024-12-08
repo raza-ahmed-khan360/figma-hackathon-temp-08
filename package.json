@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install && npm install react-icons",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

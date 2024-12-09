@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Hero: NextPage = () => {
   return (
-    <div className="w-full h-full relative flex justify-center sm:h-full overflow-hidden text-left text-[40px] sm:text-[60px] text-gray-scales-black font-inter">
+    <div className="w-full h-auto relative flex justify-center sm:h-full overflow-hidden text-left text-[40px] sm:text-[60px] text-gray-scales-black font-inter">
       {/* Hero Background */}
       <div className="relative rounded-t-none rounded-br-none rounded-bl-[48px] bg-whitesmoke w-full sm:w-[1321px] h-auto sm:h-full overflow-hidden mx-auto sm:mx-0">
         {/* Product Image */}

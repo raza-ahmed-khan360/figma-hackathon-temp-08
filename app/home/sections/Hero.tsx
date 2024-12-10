@@ -4,45 +4,49 @@ import Link from "next/link";
 
 const Hero: NextPage = () => {
   return (
-    <div className="w-full relative flex justify-center h-auto sm:h-[850px] overflow-hidden text-left text-[40px] sm:text-[60px] text-gray-scales-black font-inter">
-      {/* Hero Background */}
-      <div className="relative rounded-t-none rounded-br-none rounded-bl-[48px] bg-whitesmoke w-full sm:w-[1321px] h-auto sm:h-[850px] overflow-hidden mx-auto sm:mx-0">
-        {/* Product Image */}
-        <Image
-          className="absolute top-[100px] sm:top-[115px] right-[20px] sm:left-[777px] w-[300px] sm:w-[434px] h-[400px] sm:h-[584px] object-cover"
-          width={434}
-          height={584}
-          alt="Product Image"
-          src="/homepage/Hero/Hero.png"
-        />
+    <div className="w-full flex justify-center py-8 lg:py-0">
+      <div className="container mx-auto px-10 lg:px-10 max-w-7xl">
+        <div className="relative flex flex-col-reverse lg:flex-row items-center justify-around bg-whitesmoke rounded-lg lg:rounded-bl-[48px] overflow-hidden">
+          {/* Text Content */}
+          <div className="w-full font-inter lg:w-1/2 p-6 lg:p-12 text-center lg:text-left">
+            {/* Welcome Text */}
+            <div className="text-xs lg:text-sm tracking-widest uppercase mb-4">
+              Welcome to chairy
+            </div>
 
-        {/* Text Content */}
-        <div className="absolute top-[150px] sm:top-[229px] left-4 sm:left-[70px] w-[90%] sm:w-[557px] h-auto">
-          {/* Welcome Text */}
-          <div className="text-[12px] sm:text-[14px] tracking-[0.12em] leading-[100%] uppercase">
-            Welcome to chairy
+            {/* Main Heading */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+              Best Furniture<br />
+              Collection for your<br />
+              interior.
+            </h1>
+
+            {/* CTA Button */}
+            <Link 
+              href="/products" 
+              className="inline-flex items-center justify-center px-6 py-3 bg-accents-accents text-white rounded-lg hover:bg-opacity-90 transition-colors"
+            >
+              <span className="mr-2 text-sm lg:text-base font-semibold">Shop Now</span>
+              <Image
+                className="w-5 h-5 lg:w-6 lg:h-6"
+                width={24}
+                height={24}
+                alt="Right Arrow"
+                src="/homepage/Hero/right-arrow.svg"
+              />
+            </Link>
           </div>
 
-          {/* Main Heading */}
-          <b className="mt-4 block text-[40px] sm:text-[60px] leading-[110%] capitalize">
-            <p className="m-0">Best Furniture</p>
-            <p className="m-0">Collection for your</p>
-            <p className="m-0">interior.</p>
-          </b>
-
-          {/* CTA Button */}
-          <Link href={'/products'} className="mt-8 no-underline cursor-pointer w-1/4 rounded-lg bg-accents-accents flex items-center justify-center py-3.5 px-6 gap-4 text-[14px] sm:text-[16px] text-gray-scales-white">
-            <div className="relative leading-[110%] capitalize font-semibold">
-              Shop Now
-            </div>
+          {/* Product Image */}
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
             <Image
-              className="w-5 h-5 sm:w-6 sm:h-6"
-              width={24}
-              height={24}
-              alt="Right Arrow"
-              src="/homepage/Hero/right-arrow.svg"
+              className="w-64 md:w-96 lg:w-[434px] h-auto object-contain"
+              width={434}
+              height={584}
+              alt="Product Image"
+              src="/homepage/Hero/Hero.png"
             />
-          </Link>
+          </div>
         </div>
       </div>
     </div>

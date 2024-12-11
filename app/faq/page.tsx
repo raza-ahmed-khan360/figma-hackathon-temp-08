@@ -43,7 +43,7 @@ const FAQ: NextPage = () => {
   };
 
   return (
-    <div className="container mx-auto font-inter px-4 py-12">
+    <div className="container mx-auto w-auto font-inter px-4 py-12">
       {/* Header Section */}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -64,7 +64,7 @@ const FAQ: NextPage = () => {
           >
             <div 
               onClick={() => toggleFAQ(index)}
-              className="flex justify-between items-center p-6 cursor-pointer bg-gray-50 hover:bg-slate-200"
+              className="flex justify-between items-center p-6 cursor-pointer bg-gray-50 hover:bg-gray-scales-off-white"
             >
               <h3 className="text-lg font-semibold text-gray-900">
                 {faq.question}
@@ -74,17 +74,19 @@ const FAQ: NextPage = () => {
                 alt="Expand" 
                 width={24} 
                 height={24} 
-                className={`transform transition-transform duration-300 ${
-                  openIndex === index ? 'rotate-45' : ''
-                }`} 
+                className={`transform transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''}`} 
               />
             </div>
             
-            {openIndex === index && (
-              <div className="p-6 pt-0 text-gray-600">
-                {faq.answer}
-              </div>
-            )}
+            <div 
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-[500px]' : 'max-h-0'}`}
+            >
+              {openIndex === index && (
+                <div className="p-6 pt-3 text-gray-600">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>

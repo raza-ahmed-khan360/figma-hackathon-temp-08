@@ -31,7 +31,7 @@ const Products:NextPage = () => {
             <div className="container flex flex-row items-center justify-start py-0">
         <div className="text-[32px] mb-[48px] leading-[110%] text-left capitalize font-semibold">Our Products</div>
       </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-[20px]">
+        <div className="grid w-full h-auto grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-[20px]">
           {products.map((product, index) => (
             <div 
               key={index} 

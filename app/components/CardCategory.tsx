@@ -29,7 +29,7 @@ const Card: React.FC<{ imageSrc: string; title: string; productsCount: string }>
 
 const CategoryProducts = () => {
   return (
-    <div className="flex flex-wrap items-center justify-center sm:justify-start gap-6 text-xl">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-xl">
       <Card
         imageSrc="/homepage/Top Categories/Image.png"
         title="Wing Chair"

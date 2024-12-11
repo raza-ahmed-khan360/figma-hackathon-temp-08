@@ -13,7 +13,7 @@ const Product: NextPage = () => {
             width={675}
             height={607}
             alt="Library Stool Chair"
-            src="/singleProduct/Image.png"
+            src="/singleProduct/Image (2).png"
           />
         </div>
 

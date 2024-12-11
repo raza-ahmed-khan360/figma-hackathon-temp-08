@@ -4,7 +4,7 @@ const ExploreSection = () => {
   return (
     <div className="grid lg:grid-cols-2 gap-8 py-10 lg:py-20">
       {/* Left Section - Large Chair Image and Vertical Text */}
-      <div className="relative flex justify-center items-center px-4 lg:px-0">
+      <div className="relative flex justify-center items-center">
 
         {/* Large Chair Image */}
         <div className="w-auto">

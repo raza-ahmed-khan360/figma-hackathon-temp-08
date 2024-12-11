@@ -8,7 +8,7 @@ interface CardProps {
   oldPrice?: string;
   badgeText?: string;
   badgeColor?: string;
-  link?: string
+  link?: string;
 }
 
 const CardFeatured: React.FC<CardProps> = ({
@@ -17,47 +17,50 @@ const CardFeatured: React.FC<CardProps> = ({
   price,
   oldPrice,
   badgeText,
-  badgeColor = "bg-status-success", // Default color if no badge color is provided
-  link,
+  badgeColor = "bg-green-500", // Default color if no badge color is provided
+  link = "#", // Default link if none is provided
 }) => {
   return (
-    <div className="w-full sm:w-[312px] lg:w-[300px] h-[377px] flex flex-col relative">
-      {/* Image */}
-      <Link href={`${link}`} className="w-full h-[82.76%] overflow-hidden rounded-md">
+    <div className="w-auto sm:w-[312px] lg:w-[300px] flex flex-col relative rounded-md shadow-md overflow-hidden bg-white">
+      {/* Product Image */}
+      <Link href={link} className="block w-full h-64">
         <Image
-          className="object-cover w-full h-full"
-          width={312}
-          height={312}
+          className="object-cover w-full h-full transition-transform duration-200 hover:scale-105"
+          width={300}
+          height={300}
           alt={title}
           src={imageSrc}
         />
       </Link>
 
-      {/* Product Details Section */}
-      <div className="flex flex-col justify-start gap-2.5 px-4 py-2">
-        <div className="text-sm sm:text-base leading-[130%] capitalize">{title}</div>
-        <div className="flex flex-row items-center gap-1 text-lg">
-          <div className="font-semibold">{price}</div>
+      {/* Product Details */}
+      <div className="p-4 flex flex-col gap-2">
+        <h3 className="text-sm lg:text-base font-medium text-gray-800">{title}</h3>
+        <div className="flex items-center gap-2">
+          <span className="text-lg font-semibold">{price}</span>
           {oldPrice && (
-            <div className="text-sm line-through text-gray-scales-gray">{oldPrice}</div>
+            <span className="text-sm line-through text-gray-500">{oldPrice}</span>
           )}
         </div>
       </div>
 
       {/* Add to Cart Button */}
-      <div className="w-[44px] h-[44px] bg-gray-scales-off-white rounded-lg flex items-center justify-center absolute top-[87%] right-[5%]">
+      <button
+        className="absolute bottom-4 right-4 w-12 h-12 bg-gray-50 rounded-lg flex items-center justify-center cursor-pointer shadow"
+        aria-label="Add to Cart"
+      >
         <Image
-          width={44}
-          height={44}
+          width={24}
+          height={24}
           alt="Add to Cart"
           src="/homepage/Featured/Buy 3 (1).svg"
         />
-      </div>
+      </button>
 
       {/* Badge */}
       {badgeText && (
         <div
-          className={`absolute top-2 left-2 rounded ${badgeColor} py-1.5 px-2.5 text-sm text-gray-scales-white`}
+          className={`absolute top-2 left-2 px-3 py-1 text-sm font-medium text-white rounded ${badgeColor}`}
         >
           {badgeText}
         </div>

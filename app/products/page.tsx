@@ -8,7 +8,7 @@ const Products = () => {
       <div className="container flex flex-row items-center justify-start py-0">
         <div className="relative text-[32px] leading-[110%] capitalize font-semibold">All Products</div>
       </div>
-    <div className="flex flex-wrap justify-center sm:justify-start gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
        <CardFeatured
           imageSrc="/allProducts/Image.png"
           title="Library Stool Chair"
@@ -36,7 +36,7 @@ const Products = () => {
           price="$20"
         />
     </div>
-    <div className="flex flex-wrap justify-center sm:justify-start gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
        <CardFeatured
           imageSrc="/allProducts/Image (1).png"
           title="Library Stool Chair"
@@ -64,7 +64,7 @@ const Products = () => {
           price="$20"
         />
     </div>
-    <div className="flex flex-wrap justify-center sm:justify-start gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
        <CardFeatured
           imageSrc="/allProducts/Image (8).png"
           title="Library Stool Chair"

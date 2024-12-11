@@ -24,7 +24,7 @@ const Hero: NextPage = () => {
             {/* CTA Button */}
             <Link 
               href="/products" 
-              className="inline-flex items-center justify-center px-6 py-3 bg-accents-accents text-white rounded-lg hover:bg-opacity-90 transition-colors"
+              className="inline-flex no-underline hover:underline items-center justify-center px-6 py-3 bg-accents-accents text-white rounded-lg hover:bg-opacity-90 transition-colors"
             >
               <span className="mr-2 text-sm lg:text-base font-semibold">Shop Now</span>
               <Image

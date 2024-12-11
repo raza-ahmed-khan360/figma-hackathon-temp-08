@@ -8,7 +8,7 @@ interface FeatureCardProps {
   }
   
   const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => (
-    <div className="bg-light-grey p-12 flex flex-col font-inter items-start space-y-3 w-full">
+    <div className="bg-light-grey p-12 w-auto flex flex-col font-inter items-start space-y-3">
       <Image 
         className="w-6 h-6 overflow-hidden" 
         width={24} 

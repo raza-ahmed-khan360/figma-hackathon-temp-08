@@ -21,7 +21,7 @@ const CardFeatured: React.FC<CardProps> = ({
   link = "#", // Default link if none is provided
 }) => {
   return (
-    <div className="w-auto sm:w-[312px] lg:w-[300px] flex flex-col relative rounded-md shadow-md overflow-hidden bg-white">
+    <div className="w-auto h-auto sm:w-[312px] lg:w-[300px] flex flex-col relative rounded-md shadow-md overflow-hidden bg-white">
       {/* Product Image */}
       <Link href={link} className="block w-full h-64">
         <Image

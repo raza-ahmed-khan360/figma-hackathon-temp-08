@@ -39,7 +39,7 @@ const Header: NextPage<{ onToggleMenu: () => void }> = ({ onToggleMenu }) => {
         {/* Cart Section */}
         <Link 
           href="/cart" 
-          className="flex items-center gap-2 no-underline"
+          className="flex items-center text-black gap-2 no-underline"
         >
           <div className="relative flex items-center rounded-lg bg-gray-scales-white py-2 px-3 lg:py-[11px] lg:px-4 gap-2 lg:gap-3 shadow-md hover:scale-105 transition-transform">
             <Image

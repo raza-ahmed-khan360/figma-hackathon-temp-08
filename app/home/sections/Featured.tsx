@@ -6,13 +6,13 @@ const FeaturedProducts: NextPage = () => {
     <div className="flex flex-col items-center gap-12 px-4 py-10 text-gray-scales-black font-sale-price">
       {/* Header */}
       <div className="w-full container text-leftr">
-        <h2 className="text-2xl md:text-4xl font-semibold capitalize">
+        <h2 className="text-2xl md:text-4xl lg:text-[32px] font-semibold capitalize">
           Featured Products
         </h2>
       </div>
 
       {/* Flexbox container for cards */}
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <CardFeatured
           imageSrc="/homepage/Featured/Image.png"
           title="Library Stool Chair"

@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Image from "next/image";
+import Link from 'next/link';
 
 const ProductCarousel: NextPage = () => {
   return (
@@ -13,10 +14,10 @@ const ProductCarousel: NextPage = () => {
 
         {/* View all button */}
         <div className="flex justify-center mt-6">
-        <a href="#" className="text-lg font-bold text-black flex items-center">
+        <Link href="/products" className="text-lg font-bold text-black flex items-center">
           View all
           <div className="ml-2 w-8 border-t-2 border-black"></div>
-        </a>
+        </Link>
       </div>
 </div>
       

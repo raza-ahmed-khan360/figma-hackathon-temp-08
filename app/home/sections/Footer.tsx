@@ -4,94 +4,118 @@ import Link from "next/link";
 
 const Footer: NextPage = () => {
   return (
-    <footer className="w-auto flex flex-col justify-center bg-gray-50 pt-10 pb-6 px-20 text-darkgray font-inter">
-     <div className="flex flex-col sm:flex-row items-start justify-between mb-8 gap-8 sm:gap-16">
-  {/* Logo and Description */}
-  <div className="flex flex-col items-start gap-4 w-full sm:w-auto">
-    <Link href={"/"} className="flex no-underline items-center gap-2">
-      <Image
-        src="/Footer/logo.svg"
-        alt="Comforty Logo"
-        width={40}
-        height={40}
-        className="w-10 h-10"
-      />
-      <div className="text-[20px] sm:text-[26px] font-semibold text-gray-scales-black">Comforty</div>
-    </Link>
-    <p className="text-sm text-gray-600 max-w-[200px] sm:max-w-[250px]">
-      Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum. Cras egestas purus.
-    </p>
-    <div className="flex gap-6">
-      <Link className="text-[#636270] no-underline hover:underline" target="_blank" href={"/twitter.com"}>
-        <Image src="/Footer/twitter.svg" alt="Twitter" width={26} height={26} />
-      </Link>
-      <Link className="text-[#636270] no-underline hover:underline" target="_blank" href={"/facebook.com"}>
-        <Image src="/Footer/facebook.svg" alt="Facebook" width={26} height={26} />
-      </Link>
-      <Link className="text-[#636270] no-underline hover:underline" target="_blank" href={"/instagram.com"}>
-        <Image src="/Footer/instagram.svg" alt="Instagram" width={26} height={26} />
-      </Link>
-      <Link className="text-[#636270] no-underline hover:underline" target="_blank" href={"/youtube.com"}>
-        <Image src="/Footer/youtube.svg" alt="YouTube" width={26} height={26} />
-      </Link>
-    </div>
-  </div>
+    <footer className="w-auto flex flex-col items-center bg-gray-50 py-10 px-4 sm:px-8 md:px-12 lg:px-20 text-darkgray font-inter">
+      <div className="container w-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Logo and Description */}
+          <div className="flex flex-col items-start gap-4">
+            <Link href={"/"} className="flex no-underline items-center gap-2">
+              <Image
+                src="/Footer/logo.svg"
+                alt="Comforty Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10"
+              />
+              <div className="text-xl sm:text-[26px] font-semibold text-gray-scales-black">Comforty</div>
+            </Link>
+            <p className="text-sm text-gray-600 max-w-[250px]">
+              Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum. Cras egestas purus.
+            </p>
+            <div className="flex gap-6">
+              {["twitter", "facebook", "instagram", "youtube"].map((social) => (
+                <Link 
+                  key={social}
+                  className="text-[#636270] no-underline hover:opacity-75 transition-opacity" 
+                  target="_blank" 
+                  href={`/${social}.com`}
+                >
+                  <Image 
+                    src={`/Footer/${social}.svg`} 
+                    alt={social.charAt(0).toUpperCase() + social.slice(1)} 
+                    width={26} 
+                    height={26} 
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
 
-  {/* Category Links */}
-  <div className="flex flex-col items-start gap-3 w-full sm:w-auto">
-    <h3 className="text-[14px] font-medium text-[#9A9CAA] uppercase">Category</h3>
-    <div className="space-y-2 flex flex-col text-sm text-gray-600">
-      <Link href={"/products"} className="text-[#636270] no-underline hover:underline">Sofa</Link>
-      <Link href={"/products"} className="text-[#636270] no-underline hover:underline">Armchair</Link>
-      <Link href={"/products"} className="text-[#636270] no-underline hover:underline">Wing Chair</Link>
-      <Link href={"/products"} className="text-[#636270] no-underline hover:underline">Desk Chair</Link>
-      <Link href={"/products"} className="text-[#636270] no-underline hover:underline">Wooden Chair</Link>
-      <Link href={"/products"} className="text-[#636270] no-underline hover:underline">Park Bench</Link>
-    </div>
-  </div>
+          {/* Category Links */}
+          <div className="flex flex-col items-start gap-3">
+            <h3 className="text-sm font-medium text-[#9A9CAA] uppercase">Category</h3>
+            <div className="space-y-2 flex flex-col text-sm text-gray-600">
+              {["Sofa", "Armchair", "Wing Chair", "Desk Chair", "Wooden Chair", "Park Bench"].map((category) => (
+                <Link 
+                  key={category}
+                  href={"/products"} 
+                  className="text-[#636270] no-underline hover:underline"
+                >
+                  {category}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-  {/* Support Links */}
-  <div className="flex flex-col items-start gap-3 w-full sm:w-auto">
-    <h3 className="text-[14px] font-medium text-[#9A9CAA] uppercase">Support</h3>
-    <div className="space-y-2 flex flex-col text-sm text-gray-600">
-      <Link className="text-[#636270] no-underline hover:underline" href={"/contact"}>Help & Support</Link>
-      <Link className="text-[#636270] no-underline hover:underline" href={"#"}>Terms & Conditions</Link>
-      <Link className="text-[#636270] no-underline hover:underline" href={"#"}>Privacy Policy</Link>
-      <Link className="text-[#636270] no-underline hover:underline" href={"/faq"}>Help</Link>
-    </div>
-  </div>
+          {/* Support Links */}
+          <div className="flex flex-col items-start gap-3">
+            <h3 className="text-sm font-medium text-[#9A9CAA] uppercase">Support</h3>
+            <div className="space-y-2 flex flex-col text-sm text-gray-600">
+              {[
+                { label: "Help & Support", href: "/contact" },
+                { label: "Terms & Conditions", href: "#" },
+                { label: "Privacy Policy", href: "#" },
+                { label: "Help", href: "/faq" }
+              ].map((link) => (
+                <Link 
+                  key={link.label}
+                  className="text-[#636270] no-underline hover:underline" 
+                  href={link.href}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-  {/* Newsletter */}
-  <div className="flex flex-col items-start gap-4 w-full sm:w-auto">
-    <h3 className="text-[14px] font-medium text-[#9A9CAA] uppercase">Newsletter</h3>
-    <form className="flex flex-col sm:flex-row gap-2 items-center sm:w-auto">
-      <input
-        type="email"
-        placeholder="Your email"
-        className="rounded-lg bg-gray-scales-white h-[46px] py-2 px-3 text-sm focus:outline-none font-inter text-gray-scales-dark-gray w-full sm:w-[200px]"
-      />
-      <button
-        type="submit"
-        className="bg-gray-scales-dark-gray text-white text-md font-medium py-3.5 px-6 cursor-pointer rounded-lg transition mt-4 sm:mt-0"
-      >
-        Subscribe
-      </button>
-    </form>
-    <p className="text-xs text-gray-600 sm:w-1/2">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.
-    </p>
-  </div>
-</div>
+          {/* Newsletter */}
+          <div className="flex flex-col items-start gap-4">
+            <h3 className="text-sm font-medium text-[#9A9CAA] uppercase">Newsletter</h3>
+            <form className="w-full flex flex-col gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="flex-grow rounded-lg bg-gray-scales-white h-[46px] py-2 px-3 text-sm focus:outline-none font-inter text-gray-scales-dark-gray w-full"
+                />
+                <button
+                  type="submit"
+                  className="bg-gray-scales-dark-gray text-white text-md font-medium py-3.5 px-6 cursor-pointer rounded-lg transition w-full sm:w-auto"
+                >
+                  Subscribe
+                </button>
+              </div>
+              <p className="text-xs text-gray-600 mt-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.
+              </p>
+            </form>
+          </div>
+        </div>
 
-
-      {/* Footer Bottom */}
-      <div className="pt-4 flex flex-row w-full justify-between items-center text-sm opacity-[0.5] text-gray-600">
-        <p>© 2021 - Blogy - Designed & Developed by Zakisoft</p>
-        <div className="flex gap-4">
-          <Image src="/Footer/mastercard.svg" alt="mastercard" width={40} height={16} />
-          <Image src="/Footer/paypal.svg" alt="PayPal" width={40} height={16} />
-          <Image src="/Footer/american-express.svg" alt="american-express" width={40} height={16} />
-          <Image src="/Footer/visa-union.svg" alt="Visa" width={40} height={16} />
+        {/* Footer Bottom */}
+        <div className="mt-8 pt-4 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-600">
+          <p className="mb-4 sm:mb-0 text-center sm:text-left">© 2021 - Blogy - Designed & Developed by Zakisoft</p>
+          <div className="flex gap-4">
+            {["mastercard", "paypal", "american-express", "visa-union"].map((payment) => (
+              <Image 
+                key={payment}
+                src={`/Footer/${payment}.svg`} 
+                alt={payment.replace('-', ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')} 
+                width={40} 
+                height={16} 
+              />
+            ))}
+          </div>
         </div>
       </div>
     </footer>

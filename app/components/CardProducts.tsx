@@ -7,7 +7,7 @@ const Card = ({ imageSrc, label, price, oldPrice, status }: any) => {
           <Image
             src={imageSrc}
             alt={label}
-            className="rounded-md object-cover w-full"
+            className="rounded-md transition-transform duration-200 hover:scale-105 cursor-pointer object-cover w-full"
             width={312}
             height={312}
           />
@@ -37,7 +37,7 @@ const Card = ({ imageSrc, label, price, oldPrice, status }: any) => {
           </div>
   
           {/* Cart Button */}
-          <button className="w-[44px] h-[44px] rounded flex items-center justify-center bg-gray-50 hover:bg-gray-300">
+          <button className="w-[44px] h-[44px] rounded flex shadow items-center justify-center bg-gray-50 cursor-pointer">
             <Image
               src="/homepage/Our Products/Buy 3.svg"
               alt="Add to cart"

@@ -1,50 +1,67 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { FiMenu } from "react-icons/fi";
 
-const Header: NextPage = () => {
+const Header: NextPage<{ onToggleMenu: () => void }> = ({ onToggleMenu }) => {
   return (
-    <div className="w-full bg-gray-scales-off-white flex flex-col lg:flex-row items-center justify-between py-3 px-4 lg:px-20 box-border text-left text-[20px] lg:text-[26px] text-gray-scales-black font-inter">
-      {/* Logo Section */}
-      <Link href={"/"} className="flex no-underline flex-row items-center justify-start gap-2 mb-3 lg:mb-0">
-        <Image
-          className="w-8 lg:w-10 relative h-8 lg:h-10 overflow-hidden shrink-0"
-          width={40}
-          height={40}
-          alt=""
-          src="/Header/logo.svg"
-        />
-        <div className="relative text-gray-scales-black font-inter leading-[120%] font-medium">
-          Comforty
-        </div>
-      </Link>
+    <header className="w-auto font-inter flex justify-between items-center bg-gray-scales-off-white py-3 px-4 lg:px-20">
+      <div className="container mx-auto flex items-center justify-between lg:justify-between px-0">
+        {/* Logo and Toggle Menu */}
+        <div className="flex items-center gap-4">
+          {/* Logo Section */}
+          <Link 
+            href="/" 
+            className="flex items-center no-underline gap-2"
+          >
+            <Image
+              className="w-8 lg:w-10 h-8 lg:h-10"
+              width={40}
+              height={40}
+              alt="Comforty Logo"
+              src="/Header/logo.svg"
+            />
+            <span className="text-lg lg:text-xl text-gray-scales-black font-medium">
+              Comforty
+            </span>
+          </Link>
 
-      {/* Cart Section */}
-      <Link href={"/cart"} className="no-underline">
-        <button className="flex flex-row font-inter cursor-pointer items-center justify-center text-center text-[10px] lg:text-[12px]">
-          <div className="rounded-lg bg-gray-scales-white flex flex-row items-center justify-center py-2 lg:py-[11px] px-3 lg:px-4 gap-2 lg:gap-3">
-            <div className="flex flex-row items-center justify-start gap-2">
-              <Image
-                className="w-5 lg:w-[22px] relative h-5 lg:h-[22px] overflow-hidden shrink-0"
-                width={22}
-                height={22}
-                alt=""
-                src="/Header/buy.svg"
-              />
-              <div className="relative leading-[110%] capitalize font-medium">
-                Cart
-              </div>
-            </div>
-            <div className="w-4 lg:w-5 relative h-4 lg:h-5 text-[8px] lg:text-[10px] text-gray-scales-white font-dm-sans">
-              <div className="absolute top-[0px] left-[0px] rounded-full bg-accents-dark-accents w-full h-full" />
-              <div className="absolute top-[2px] lg:top-[5px] left-[5px] lg:left-[7px] leading-[100%] capitalize font-medium">
+          {/* Mobile Menu Toggle */}
+          <button
+            className="lg:hidden flex items-center justify-center w-8 h-8 text-2xl text-gray-scales-black"
+            onClick={onToggleMenu}
+            aria-label="Toggle Menu"
+          >
+            <FiMenu />
+          </button>
+        </div>
+
+        {/* Cart Section */}
+        <Link 
+          href="/cart" 
+          className="flex items-center gap-2 no-underline"
+        >
+          <div className="relative flex items-center rounded-lg bg-gray-scales-white py-2 px-3 lg:py-[11px] lg:px-4 gap-2 lg:gap-3 shadow-md hover:scale-105 transition-transform">
+            <Image
+              className="w-5 lg:w-[22px] h-5 lg:h-[22px]"
+              width={22}
+              height={22}
+              alt="Cart"
+              src="/Header/buy.svg"
+            />
+            <span className="text-xs lg:text-sm font-medium capitalize">
+              Cart
+            </span>
+            <div className="relative w-4 lg:w-5 h-4 lg:h-5">
+              <div className="absolute inset-0 rounded-full bg-accents-dark-accents" />
+              <span className="absolute inset-0 flex items-center justify-center text-[8px] lg:text-[10px] text-gray-scales-white font-medium">
                 2
-              </div>
+              </span>
             </div>
           </div>
-        </button>
-      </Link>
-    </div>
+        </Link>
+      </div>
+    </header>
   );
 };
 

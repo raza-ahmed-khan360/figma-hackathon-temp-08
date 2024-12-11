@@ -5,7 +5,7 @@ import Image from 'next/image'
 const Products = () => {
   return (
     <div className="w-auto h-auto py-12 flex flex-col items-center justify-center gap-[49px] overflow-hidden text-base text-gray-scales-black font-sale-price">
-      <div className="w-[1920px] flex flex-row items-center justify-start py-0 px-[300px] box-border">
+      <div className="container flex flex-row items-center justify-start py-0">
         <div className="relative text-[32px] leading-[110%] capitalize font-semibold">All Products</div>
       </div>
     <div className="flex flex-wrap justify-center sm:justify-start gap-8">
@@ -134,7 +134,7 @@ const Products = () => {
                 src={src} 
                 alt={`Instagram post ${index + 1}`}
                 fill
-                className="object-cover rounded-md"
+                className="object-cover cursor-pointer transition-transform duration-200 hover:scale-105 rounded-md"
                 sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 16vw"
               />
             </div>

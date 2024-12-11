@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const Contact:NextPage = () => {
   	return (
-        <div className="w-full py-16 px-4 md:px-8 lg:px-16 xl:px-24">
+        <div className="w-auto flex flex-col items-center justify-center px-4 md:px-8 lg:px-16 xl:px-24">
         {/* Header Section */}
-        <div className="max-w-2xl mx-auto text-center mb-16">
+        <div className="max-w-2xl text-center mb-16">
           <h1 className="text-3xl md:text-4xl font-semibold text-black mb-4 font-poppins">
             Get In Touch With Us
           </h1>
@@ -18,7 +18,7 @@ const Contact:NextPage = () => {
         </div>
   
         {/* Contact Content */}
-        <div className="flex flex-col lg:flex-row justify-between gap-12 max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 max-w-6xl ">
           {/* Contact Information */}
           <div className="w-full lg:w-1/3 space-y-10">
             {/* Address */}

@@ -11,9 +11,9 @@ const AboutHero:NextPage = () => {
           <div className="text-[16px] lg:text-[18px] leading-[1.5]">
             At Comforty, we believe that the right chair can transform your space and elevate your comfort. Specializing in ergonomic design, premium materials, and modern aesthetics, we craft chairs that seamlessly blend style with functionality.
           </div>
-          <div className="mt-auto bg-whitesmoke1 text-whitesmoke cursor-pointer text-[16px] py-4 px-6 rounded cursor-pointern">
+          <Link href="/products" className="mt-auto bg-whitesmoke1 text-whitesmoke cursor-pointer text-[16px] py-4 px-6 rounded cursor-pointern">
             View collection
-          </div>
+          </Link>
         </div>
       
         {/* Image Section */}

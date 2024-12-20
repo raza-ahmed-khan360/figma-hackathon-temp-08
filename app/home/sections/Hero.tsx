@@ -6,7 +6,7 @@ const Hero: NextPage = () => {
   return (
     <div className="w-full flex justify-center py-8 lg:py-0">
       <div className="container mx-auto px-10 lg:px-10 max-w-7xl">
-        <div className="relative flex flex-col lg:flex-row items-center justify-around bg-whitesmoke rounded-lg lg:rounded-bl-[48px] overflow-hidden">
+        <div className="relative flex flex-col-reverse lg:flex-row items-center justify-around bg-whitesmoke rounded-lg lg:rounded-bl-[48px] overflow-hidden">
           {/* Text Content */}
           <div className="w-full font-inter lg:w-1/2 p-6 lg:p-12 text-center lg:text-left">
             {/* Welcome Text */}

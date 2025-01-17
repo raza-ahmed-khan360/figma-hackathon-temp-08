@@ -3,7 +3,8 @@
 ## Overview
 Comforty Website is a fully responsive website designed to showcase products with a modern layout and aesthetic. The project focuses on enhancing user experience, showcasing product features, and ensuring accessibility across devices.
 
-You can check it out by yourself [Click Here]()
+You can check it out by yourself [Click Here](https://figma-hackathon-temp-08.vercel.app)
+You can check out the workflow brainstorming of this project [here](https://mm.tt/app/map/3583370281?t=ht8J3oF9VY) 
 
 ## Features
 - **Responsive Design**: Adapts seamlessly to all screen sizes, providing a consistent experience.
